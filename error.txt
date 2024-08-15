@@ -1,0 +1,38 @@
+let a = document.querySelector('.num-a');
+let b = document.querySelector('.num-b');
+let output = document.querySelector('.output');
+let add = document.querySelector('.add');
+
+// function addition() {
+//      let sum  = parseInt(a.value) + parseInt(b.value);
+//      output.innerHTML = `output: ${sum}`;
+//     }
+
+//     add.onclick = addition;
+
+// add.onclick = () => {
+//     //   output.innerHTML = a + b; 
+    
+//     output.innerHTML = parseInt(a.value) + parseInt(b.value);
+// }
+// (a , b) => {
+//     output =  a + b;  
+// }
+
+add.onclick = (a , b) => {
+    output.innerHTML = `Output: ${parseInt(a.value) + parseInt(b.value)}`
+} 
+this code showed null error becuase i was passing the a and b in parameter which takes things locally but the a and b were already declared globally so doesnt matter
+
+ dsa.js:17 Uncaught 
+TypeError: Cannot read properties of undefined (reading 'value')
+    at add.onclick (dsa.js:17:66)
+
+﻿
+this error was being showed and i resolved this by making the code change to this 
+
+add.onclick = () => {
+    output.innerHTML = `Output: ${parseInt(a.value) + parseInt(b.value)}`
+}
+
+as i said before i had to change the parameter as the a and b were defined globally and when passing into a parameter it means that it has to be a local variable 
